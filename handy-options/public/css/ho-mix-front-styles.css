@@ -1,0 +1,101 @@
+/* ##############################################
+Header menu
+############################################## */
+
+/* Sub menu center */
+.menu li.menu-item, .menu li.page_item {
+    justify-content: center;
+}
+
+.menu>[data-submenu=right]>.sub-menu {
+    left: unset !important
+}
+
+/* ##############################################
+Other
+############################################## */
+
+/** Sticky **/
+.element-sticky-mobile {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: calc(var(--admin-bar, 0px) + var(--frame-size, 0px) + var(--scroll-margin-top-offset, 0px));
+}
+
+@media screen and (min-width: 768px) {
+    .element-sticky-tablet {
+        position: -webkit-sticky; /* Safari */
+        position: sticky;
+        top: calc(var(--admin-bar, 0px) + var(--frame-size, 0px) + var(--scroll-margin-top-offset, 0px));
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .element-sticky-desktop {
+        position: -webkit-sticky; /* Safari */
+        position: sticky;
+        top: calc(var(--admin-bar, 0px) + var(--frame-size, 0px) + var(--scroll-margin-top-offset, 0px));
+    }
+}
+
+/* italic and bold styles */
+.italic {
+    font-style: italic;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+b, strong {
+    font-weight: 900;
+}
+
+.oblique {
+    font-style: oblique;
+}
+
+.mark-inherit mark {
+    font-style: inherit;
+    font-weight: inherit;
+}
+
+/* Reverse on mobile */
+@media screen and (max-width: 781px) {
+    .mobile-reverse {
+        flex-wrap: wrap-reverse !important;
+    }
+}
+
+/* Background attachment fixed */
+@media screen and (max-width: 1024px) {
+    .bg-fixed,
+    .bg-fixed-after::after,
+    .bg-fixed-before::before {
+        background-attachment: scroll !important;
+    }
+}
+
+@media (hover: hover) and (min-width: 1025px) {
+    .bg-fixed,
+    .bg-fixed-after::after,
+    .bg-fixed-before::before {
+        background-attachment: fixed !important;
+    }
+}
+
+/* Text cols */
+@media screen and (min-width: 1024px) {
+    .cols-2 {
+        column-count: 2;
+    }
+    .cols-3 {
+        column-count: 2;
+    }
+}
+
+@media screen and (min-width: 1512px) {
+    .cols-3 {
+        column-count: 3;
+    }
+}

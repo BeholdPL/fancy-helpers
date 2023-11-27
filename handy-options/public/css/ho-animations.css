@@ -1,0 +1,147 @@
+:root {
+    --animationTime: .8s;
+    --animationTimeBackground: .3s;
+}
+
+html {-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;}
+
+body {
+    transition: background-color .3s;
+}
+
+.delay50 {
+    animation-delay: 50ms !important;
+}
+
+.delay100 {
+    animation-delay: 100ms !important;
+}
+
+.delay150 {
+    animation-delay: 150ms !important;
+}
+
+.delay200 {
+    animation-delay: 200ms !important;
+}
+
+.delay250 {
+    animation-delay: 250ms !important;
+}
+
+.delay300 {
+    animation-delay: 300ms !important;
+}
+
+.delay350 {
+    animation-delay: 350ms !important;
+}
+
+.delay400 {
+    animation-delay: 400ms !important;
+}
+
+.delay450 {
+    animation-delay: 450ms !important;
+}
+
+.delay500 {
+    animation-delay: 500ms !important;
+}
+
+.delay550 {
+    animation-delay: 550ms !important;
+}
+
+.delay600 {
+    animation-delay: 600ms !important;
+}
+
+.delay650 {
+    animation-delay: 650ms !important;
+}
+
+@media screen and (min-width: 1024px) {
+    /** Fade left effect **/
+    .fade-left {
+        opacity: 0;
+        transform: translateX(2vw);
+        transition-timing-function: ease;
+    }
+    .fade-left--transition {
+        animation: fade_left_entrance var(--animationTime) forwards;
+        animation-play-state: run ;
+    }
+    @keyframes fade_left_entrance { 
+        0% {
+            opacity: 0;
+            transform: translateX(2vw)
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0)
+        }
+    }
+    /** Fade right effect **/
+    .fade-right {
+        opacity: 0;
+        transform: translateX(2vw);
+        transition-timing-function: ease;
+    }
+    .fade-right--transition {
+        animation: fade_right_entrance var(--animationTime) forwards;
+        animation-play-state: run ;
+    }
+    @keyframes fade_right_entrance { 
+        0% {
+            opacity: 0;
+            transform: translateX(-2vw)
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0)
+        }
+    }
+    /** Fade up effect **/
+    .fade-up {
+        opacity: 0;
+        transform: translateY(2vw);
+        transition-timing-function: ease;
+    }
+    .fade-up--transition {
+        animation: fade_up_entrance var(--animationTime) forwards;
+        animation-play-state: run ;
+    }
+    @keyframes fade_up_entrance { 
+        0% {
+            opacity: 0;
+            transform: translateY(2vw)
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    /** Fade effect **/
+    .fade {
+        opacity: 0;
+        transition-timing-function: ease;
+    }
+    .fade--transition {
+        animation: fade_transition var(--animationTime) forwards;
+        animation-play-state: run ;
+    }
+    @keyframes fade_transition { 
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    /** Horizontal transform **/
+    [class*="translate"] {
+        transition: transform .3s;
+    }
+}
