@@ -863,9 +863,15 @@ function fancy_helpers_render_contact_group_script() {
                 '<button type="button" class="button remove-field remove-contact-group"><?php echo esc_js(__('Remove', 'fancy-helpers')); ?></button>'+
                 '</div>');
             container.append(newField);
+
             if(window.fancyHelpersRefresh){
                 window.fancyHelpersRefresh(container);
             }
+
+            if(window.fancyHelpersRefresh){
+                window.fancyHelpersRefresh(container);
+            }
+
         });
         container.on('click', '.remove-contact-group', function(e){
             e.preventDefault();
@@ -993,4 +999,5 @@ function fancy_helpers_sanitize_customs_options($input) {
     return $sanitized_input;
 }
 register_setting('fancy_helpers_contacts_customs_options', 'fancy_helpers_contacts_customs_options', 'fancy_helpers_sanitize_customs_options');
+register_setting('fancy_helpers_contacts_contacts_options', 'fancy_helpers_contacts_contacts_options', 'fancy_helpers_sanitize_contacts_options');
 register_setting('fancy_helpers_contacts_contacts_options', 'fancy_helpers_contacts_contacts_options', 'fancy_helpers_sanitize_contacts_options');

@@ -14,6 +14,7 @@ jQuery(document).ready(function($){
         });
     }
 
+
     window.fancyHelpersRefresh = function(container){
         updateIndices(container);
         container.sortable('refresh');
@@ -23,10 +24,14 @@ jQuery(document).ready(function($){
         var c=$(selector);
         if(!c.length) return;
         c.sortable({handle:'.drag-handle',update:function(){updateIndices(c);}});
+
         var observer=new MutationObserver(function(){
             updateIndices(c);
             c.sortable('refresh');
         });
+
+        var observer=new MutationObserver(function(){updateIndices(c);});
+
         observer.observe(c[0],{childList:true});
         updateIndices(c);
     }
