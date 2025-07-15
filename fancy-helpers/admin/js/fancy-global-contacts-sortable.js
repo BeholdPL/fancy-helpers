@@ -13,6 +13,13 @@ jQuery(document).ready(function($){
             });
         });
     }
+
+
+    window.fancyHelpersRefresh = function(container){
+        updateIndices(container);
+        container.sortable('refresh');
+    };
+
     function initContainer(selector){
         var c=$(selector);
         if(!c.length) return;

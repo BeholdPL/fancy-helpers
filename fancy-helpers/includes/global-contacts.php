@@ -288,6 +288,9 @@ function fancy_helpers_render_address_script() {
                 '<button type="button" class="button remove-field remove-address"><?php echo esc_js(__('Remove', 'fancy-helpers')); ?></button>' +
                 '</div>');
             container.append(newField);
+            if(window.fancyHelpersRefresh){
+                window.fancyHelpersRefresh(container);
+            }
 
             newField.find('input[name$="[name]"]').on('input', updateShortcodeAndTag);
         });
@@ -392,6 +395,9 @@ function fancy_helpers_render_phone_script() {
                 '<button type="button" class="button remove-field remove-phone"><?php echo esc_js(__('Remove', 'fancy-helpers')); ?></button>' +
                 '</div>');
             container.append(newField);
+            if(window.fancyHelpersRefresh){
+                window.fancyHelpersRefresh(container);
+            }
 
             newField.find('input[name$="[name]"]').on('input', updateShortcodeAndTag);
         });
@@ -495,6 +501,9 @@ function fancy_helpers_render_email_script() {
                 '<button type="button" class="button remove-field remove-email"><?php echo esc_attr__('Remove', 'fancy-helpers'); ?></button>' +
                 '</div>');
             container.append(newField);
+            if(window.fancyHelpersRefresh){
+                window.fancyHelpersRefresh(container);
+            }
 
             newField.find('input[name$="[name]"]').on('input', updateShortcodeAndTag).trigger('input');
         });
@@ -626,6 +635,9 @@ function fancy_helpers_render_social_media_script() {
                 '<button type="button" class="button remove-field remove-social-media"><?php echo esc_attr__('Remove', 'fancy-helpers'); ?></button>' +
                 '</div>');
             container.append(newField);
+            if(window.fancyHelpersRefresh){
+                window.fancyHelpersRefresh(container);
+            }
 
             newField.find('input[name$="[name]"]').on('input', updateShortcodeAndTag).trigger('input');
         });
@@ -745,6 +757,9 @@ function fancy_helpers_render_custom_script() {
                 '<button type="button" class="button remove-field remove-custom"><?php echo esc_js(__('Remove', 'fancy-helpers')); ?></button>' +
                 '</div>');
             container.append(newField);
+            if(window.fancyHelpersRefresh){
+                window.fancyHelpersRefresh(container);
+            }
 
             newField.find('input[name$="[name]"]').on('input', updateShortcodeAndTag);
         });
@@ -843,6 +858,11 @@ function fancy_helpers_render_contact_group_script() {
                 '<button type="button" class="button remove-field remove-contact-group"><?php echo esc_js(__('Remove', 'fancy-helpers')); ?></button>'+
                 '</div>');
             container.append(newField);
+
+            if(window.fancyHelpersRefresh){
+                window.fancyHelpersRefresh(container);
+            }
+
         });
         container.on('click', '.remove-contact-group', function(e){
             e.preventDefault();
