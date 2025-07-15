@@ -960,10 +960,15 @@ function fancy_helpers_sanitize_contacts_options($input) {
  * Sanitize custom options
  */
 function fancy_helpers_sanitize_customs_options($input) {
-    if (isset($input['customs'])) {
-        $input['customs'] = array_filter(array_map('sanitize_text_field', $input['customs']));
+    $sanitized_input = array();
+    if (isset($input['customs']) && is_array($input['customs'])) {
+        foreach ($input['customs'] as $index => $custom) {
+            $sanitized_input['customs'][$index]['name']  = sanitize_text_field($custom['name'] ?? '');
+            $sanitized_input['customs'][$index]['value'] = wp_kses_post($custom['value'] ?? '');
+        }
     }
-    return $input;
+    return $sanitized_input;
 }
 register_setting('fancy_helpers_contacts_customs_options', 'fancy_helpers_contacts_customs_options', 'fancy_helpers_sanitize_customs_options');
+register_setting('fancy_helpers_contacts_contacts_options', 'fancy_helpers_contacts_contacts_options', 'fancy_helpers_sanitize_contacts_options');
 register_setting('fancy_helpers_contacts_contacts_options', 'fancy_helpers_contacts_contacts_options', 'fancy_helpers_sanitize_contacts_options');
