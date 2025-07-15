@@ -11,6 +11,7 @@
     border: 1px solid #e5e5e5;
     border-radius: 5px;
     max-width: 768px;
+    position: relative;
 }
 
 /* Styling for input fields within .fancy-helpers-field */
@@ -118,6 +119,14 @@
     background-color: #19401c;
     border-color: #19401c;
     color: white;
+}
+
+/* Styling for drag handle */
+.drag-handle {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    cursor: move;
 }
 
 /* Styling for the save button */
