@@ -40,6 +40,7 @@ function fancy_helpers_contacts_page_content() {
         'phones' => __('Phone Numbers', 'fancy-helpers'),
         'emails' => __('Email Addresses', 'fancy-helpers'),
         'social_media' => __('Social Media', 'fancy-helpers'),
+        'contacts' => __('Contacts', 'fancy-helpers'),
         'customs' => __('Custom Fields', 'fancy-helpers')
     ];
     ?>
@@ -133,7 +134,7 @@ function fancy_helpers_contacts_page_content() {
  * Initialize settings for the Contacts plugin
  */
 function fancy_helpers_contacts_settings_init() {
-    $tabs = array('hours', 'addresses', 'phones', 'emails', 'social_media', 'customs');
+    $tabs = array('hours', 'addresses', 'phones', 'emails', 'social_media', 'contacts', 'customs');
 
     foreach ($tabs as $tab) {
         register_setting('fancy_helpers_contacts_' . $tab . '_options', 'fancy_helpers_contacts_' . $tab . '_options', 'fancy_helpers_sanitize_' . $tab . '_options');
@@ -153,6 +154,7 @@ function fancy_helpers_contacts_settings_init() {
             case 'phones':
             case 'emails':
             case 'social_media':
+            case 'contacts':
             case 'customs':
                 add_settings_field(
                     'fancy_helpers_' . $tab,
@@ -245,6 +247,7 @@ function fancy_helpers_render_address_field($index, $address) {
     $tag = '{{contacts.address-' . esc_attr($address['name']) . '}}';
     
     echo '<div class="fancy-helpers-field fancy-helpers-address-field">';
+    echo '<span class="dashicons dashicons-move drag-handle"></span>';
     echo '<div class="fancy-helpers-input-group">';
     echo '<div style="width: 192px; margin-right: 10px;"><label for="address_name_' . $index . '">' . esc_html__('Label', 'fancy-helpers') . '</label>';
     echo '<input type="text" id="address_name_' . $index . '" name="fancy_helpers_contacts_addresses_options[addresses][' . $index . '][name]" value="' . esc_attr($address['name']) . '" required></div>';
@@ -285,6 +288,9 @@ function fancy_helpers_render_address_script() {
                 '<button type="button" class="button remove-field remove-address"><?php echo esc_js(__('Remove', 'fancy-helpers')); ?></button>' +
                 '</div>');
             container.append(newField);
+            if(window.fancyHelpersRefresh){
+                window.fancyHelpersRefresh(container);
+            }
 
             newField.find('input[name$="[name]"]').on('input', updateShortcodeAndTag);
         });
@@ -344,6 +350,7 @@ function fancy_helpers_render_phone_field($index, $phone) {
     $tag_with_format = '{{contacts.phone-tel-' . esc_attr($phone['name']) . '}}';
     
     echo '<div class="fancy-helpers-field fancy-helpers-phone-field">';
+    echo '<span class="dashicons dashicons-move drag-handle"></span>';
     echo '<div class="fancy-helpers-input-group">';
     echo '<div style="width: 192px; margin-right: 10px;"><label for="phone_name_' . $index . '">' . esc_html__('Label', 'fancy-helpers') . '</label>';
     echo '<input type="text" id="phone_name_' . $index . '" name="fancy_helpers_contacts_phones_options[phones][' . $index . '][name]" value="' . esc_attr($phone['name']) . '" required></div>';
@@ -388,6 +395,9 @@ function fancy_helpers_render_phone_script() {
                 '<button type="button" class="button remove-field remove-phone"><?php echo esc_js(__('Remove', 'fancy-helpers')); ?></button>' +
                 '</div>');
             container.append(newField);
+            if(window.fancyHelpersRefresh){
+                window.fancyHelpersRefresh(container);
+            }
 
             newField.find('input[name$="[name]"]').on('input', updateShortcodeAndTag);
         });
@@ -451,6 +461,7 @@ function fancy_helpers_render_email_field($index, $email) {
     $tag_with_format = '{{contacts.email-mailto-' . esc_attr($email['name']) . '}}';
     
     echo '<div class="fancy-helpers-field fancy-helpers-email-field">';
+    echo '<span class="dashicons dashicons-move drag-handle"></span>';
     echo '<div class="fancy-helpers-input-group">';
     echo '<div style="width: 192px; margin-right: 10px;"><label for="email_name_' . $index . '">' . esc_html__('Label', 'fancy-helpers') . '</label>';
     echo '<input type="text" id="email_name_' . $index . '" name="fancy_helpers_contacts_emails_options[emails][' . $index . '][name]" value="' . esc_attr($email['name']) . '" required></div>';
@@ -490,6 +501,9 @@ function fancy_helpers_render_email_script() {
                 '<button type="button" class="button remove-field remove-email"><?php echo esc_attr__('Remove', 'fancy-helpers'); ?></button>' +
                 '</div>');
             container.append(newField);
+            if(window.fancyHelpersRefresh){
+                window.fancyHelpersRefresh(container);
+            }
 
             newField.find('input[name$="[name]"]').on('input', updateShortcodeAndTag).trigger('input');
         });
@@ -571,6 +585,7 @@ function fancy_helpers_render_social_media_field($index, $platform) {
     $tag_name = '{{contacts.social-' . esc_attr($platform['name']) . '-name}}';
 
     echo '<div class="fancy-helpers-field fancy-helpers-social-media-field">';
+    echo '<span class="dashicons dashicons-move drag-handle"></span>';
     echo '<div class="fancy-helpers-input-group">';
     echo '<div style="width: 192px; margin-right: 10px;"><label for="social_name_' . $index . '">' . esc_html__('Label', 'fancy-helpers') . '</label>';
     echo '<input type="text" id="social_name_' . $index . '" name="fancy_helpers_contacts_social_media_options[social_media][' . $index . '][name]" value="' . esc_attr($platform['name']) . '" required></div>';
@@ -620,6 +635,9 @@ function fancy_helpers_render_social_media_script() {
                 '<button type="button" class="button remove-field remove-social-media"><?php echo esc_attr__('Remove', 'fancy-helpers'); ?></button>' +
                 '</div>');
             container.append(newField);
+            if(window.fancyHelpersRefresh){
+                window.fancyHelpersRefresh(container);
+            }
 
             newField.find('input[name$="[name]"]').on('input', updateShortcodeAndTag).trigger('input');
         });
@@ -698,6 +716,7 @@ function fancy_helpers_render_custom_field($index, $custom) {
     $tag = '{{contacts.custom-' . esc_attr($custom['name']) . '}}';
     
     echo '<div class="fancy-helpers-field fancy-helpers-custom-field">';
+    echo '<span class="dashicons dashicons-move drag-handle"></span>';
     echo '<div class="fancy-helpers-input-group">';
     echo '<div style="width: 192px; margin-right: 10px;"><label for="custom_name_' . $index . '">' . esc_html__('Label', 'fancy-helpers') . '</label>';
     echo '<input type="text" id="custom_name_' . $index . '" name="fancy_helpers_contacts_customs_options[customs][' . $index . '][name]" value="' . esc_attr($custom['name']) . '" required></div>';
@@ -738,6 +757,9 @@ function fancy_helpers_render_custom_script() {
                 '<button type="button" class="button remove-field remove-custom"><?php echo esc_js(__('Remove', 'fancy-helpers')); ?></button>' +
                 '</div>');
             container.append(newField);
+            if(window.fancyHelpersRefresh){
+                window.fancyHelpersRefresh(container);
+            }
 
             newField.find('input[name$="[name]"]').on('input', updateShortcodeAndTag);
         });
@@ -775,12 +797,91 @@ function fancy_helpers_render_custom_script() {
 }
 
 /**
+ * Callback for contact groups
+ */
+function fancy_helpers_contacts_field_callback() {
+    $options = get_option('fancy_helpers_contacts_contacts_options');
+    $contacts = isset($options['contacts']) ? $options['contacts'] : array();
+
+    echo '<div id="fancy-helpers-contacts-groups-container">';
+    foreach ($contacts as $index => $contact) {
+        fancy_helpers_render_contact_group_field($index, $contact);
+    }
+    echo '</div>';
+    echo '<button type="button" id="add-contact-group" class="button add">' . esc_html__('Add Contact', 'fancy-helpers') . '</button>';
+
+    fancy_helpers_render_contact_group_script();
+}
+
+/**
+ * Render a single contact group field
+ */
+function fancy_helpers_render_contact_group_field($index, $contact) {
+    echo '<div class="fancy-helpers-field fancy-helpers-contact-group">';
+    echo '<span class="dashicons dashicons-move drag-handle"></span>';
+    echo '<div class="fancy-helpers-input-group">';
+    echo '<div style="width: 192px; margin-right: 10px;"><label for="contact_name_' . $index . '">' . esc_html__('Name', 'fancy-helpers') . '</label>';
+    echo '<input type="text" id="contact_name_' . $index . '" name="fancy_helpers_contacts_contacts_options[contacts][' . $index . '][name]" value="' . esc_attr($contact['name'] ?? '') . '" required></div>';
+    echo '<div style="flex-grow:1;"><label for="contact_phone_' . $index . '">' . esc_html__('Phone', 'fancy-helpers') . '</label>';
+    echo '<input type="text" id="contact_phone_' . $index . '" name="fancy_helpers_contacts_contacts_options[contacts][' . $index . '][phone]" value="' . esc_attr($contact['phone'] ?? '') . '"></div>';
+    echo '</div>';
+    echo '<div class="fancy-helpers-input-group">';
+    echo '<div style="flex-grow:1;"><label for="contact_email_' . $index . '">' . esc_html__('Email', 'fancy-helpers') . '</label>';
+    echo '<input type="email" id="contact_email_' . $index . '" name="fancy_helpers_contacts_contacts_options[contacts][' . $index . '][email]" value="' . esc_attr($contact['email'] ?? '') . '"></div>';
+    echo '</div>';
+    echo '<button type="button" class="button remove-field remove-contact-group">' . esc_html__('Remove', 'fancy-helpers') . '</button>';
+    echo '</div>';
+}
+
+/**
+ * Render JavaScript for contact groups
+ */
+function fancy_helpers_render_contact_group_script() {
+    ?>
+    <script>
+    jQuery(document).ready(function($){
+        var container = $('#fancy-helpers-contacts-groups-container');
+        $('#add-contact-group').on('click', function(){
+            var newIndex = container.children().length;
+            var newField = $('<div class="fancy-helpers-field fancy-helpers-contact-group">'+
+                '<span class="dashicons dashicons-move drag-handle"></span>'+
+                '<div class="fancy-helpers-input-group">'+
+                '<div style="width: 192px; margin-right: 10px;"><label for="contact_name_'+newIndex+'"><?php echo esc_js(__('Name', 'fancy-helpers')); ?></label>'+
+                '<input type="text" id="contact_name_'+newIndex+'" name="fancy_helpers_contacts_contacts_options[contacts]['+newIndex+'][name]" required></div>'+
+                '<div style="flex-grow:1;"><label for="contact_phone_'+newIndex+'"><?php echo esc_js(__('Phone', 'fancy-helpers')); ?></label>'+
+                '<input type="text" id="contact_phone_'+newIndex+'" name="fancy_helpers_contacts_contacts_options[contacts]['+newIndex+'][phone]"></div>'+
+                '</div>'+
+                '<div class="fancy-helpers-input-group">'+
+                '<div style="flex-grow:1;"><label for="contact_email_'+newIndex+'"><?php echo esc_js(__('Email', 'fancy-helpers')); ?></label>'+
+                '<input type="email" id="contact_email_'+newIndex+'" name="fancy_helpers_contacts_contacts_options[contacts]['+newIndex+'][email]"></div>'+
+                '</div>'+
+                '<button type="button" class="button remove-field remove-contact-group"><?php echo esc_js(__('Remove', 'fancy-helpers')); ?></button>'+
+                '</div>');
+            container.append(newField);
+            if(window.fancyHelpersRefresh){
+                window.fancyHelpersRefresh(container);
+            }
+        });
+        container.on('click', '.remove-contact-group', function(e){
+            e.preventDefault();
+            if(confirm('<?php echo esc_js(__('Are you sure that you want to delete this?', 'fancy-helpers')); ?>')){
+                $(this).closest('.fancy-helpers-contact-group').remove();
+            }
+        });
+    });
+    </script>
+    <?php
+}
+
+/**
  * Enqueue styles for the Fancy Global Contacts admin page
  */
-function fancy_global_contacts_styles() {
+function fancy_global_contacts_assets() {
     wp_enqueue_style('fancy-global-contacs-styles', FANCY_HELPERS_URL . 'admin/css/fancy-global-contacts.min.css', array(), null);
+    wp_enqueue_style('dashicons');
+    wp_enqueue_script('fancy-global-contacts-sortable', FANCY_HELPERS_URL . 'admin/js/fancy-global-contacts-sortable.js', array('jquery', 'jquery-ui-sortable'), null, true);
 }
-add_action('admin_enqueue_scripts', 'fancy_global_contacts_styles');
+add_action('admin_enqueue_scripts', 'fancy_global_contacts_assets');
 
 /**
  * Sanitize hours options
@@ -859,12 +960,32 @@ function fancy_helpers_sanitize_social_media_options($input) {
 }
 
 /**
+ * Sanitize contacts options
+ */
+function fancy_helpers_sanitize_contacts_options($input) {
+    $sanitized_input = array();
+    if (isset($input['contacts']) && is_array($input['contacts'])) {
+        foreach ($input['contacts'] as $index => $contact) {
+            $sanitized_input['contacts'][$index]['name'] = sanitize_text_field($contact['name']);
+            $sanitized_input['contacts'][$index]['phone'] = sanitize_text_field($contact['phone']);
+            $sanitized_input['contacts'][$index]['email'] = sanitize_email($contact['email']);
+        }
+    }
+    return $sanitized_input;
+}
+
+/**
  * Sanitize custom options
  */
 function fancy_helpers_sanitize_customs_options($input) {
-    if (isset($input['customs'])) {
-        $input['customs'] = array_filter(array_map('sanitize_text_field', $input['customs']));
+    $sanitized_input = array();
+    if (isset($input['customs']) && is_array($input['customs'])) {
+        foreach ($input['customs'] as $index => $custom) {
+            $sanitized_input['customs'][$index]['name']  = sanitize_text_field($custom['name'] ?? '');
+            $sanitized_input['customs'][$index]['value'] = wp_kses_post($custom['value'] ?? '');
+        }
     }
-    return $input;
+    return $sanitized_input;
 }
 register_setting('fancy_helpers_contacts_customs_options', 'fancy_helpers_contacts_customs_options', 'fancy_helpers_sanitize_customs_options');
+register_setting('fancy_helpers_contacts_contacts_options', 'fancy_helpers_contacts_contacts_options', 'fancy_helpers_sanitize_contacts_options');
