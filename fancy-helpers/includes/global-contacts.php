@@ -971,3 +971,4 @@ function fancy_helpers_sanitize_customs_options($input) {
 }
 register_setting('fancy_helpers_contacts_customs_options', 'fancy_helpers_contacts_customs_options', 'fancy_helpers_sanitize_customs_options');
 register_setting('fancy_helpers_contacts_contacts_options', 'fancy_helpers_contacts_contacts_options', 'fancy_helpers_sanitize_contacts_options');
+register_setting('fancy_helpers_contacts_contacts_options', 'fancy_helpers_contacts_contacts_options', 'fancy_helpers_sanitize_contacts_options');
