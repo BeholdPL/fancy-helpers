@@ -1,0 +1,57 @@
+/* Rank Math icon styling */
+
+/* Base dimensions for Rank Math icon */
+[aria-label="Rank Math"] {
+    width: 36px;
+    height: 36px;
+}
+
+/* Styling when Rank Math icon is pressed */
+[aria-label="Rank Math"].is-pressed {
+    background: black !important;
+    /* Adding important to override default styles */
+}
+
+/* Resetting styles for child div elements within Rank Math icon */
+[aria-label="Rank Math"] > div {
+    border: none !important;
+    background: none !important;
+}
+
+/* Styling for the Rank Math toolbar score */
+.edit-post-layout:not(.show-icon-labels) .interface-pinned-items button.components-button[aria-label='Rank Math'] {
+    min-width: unset !important;
+    width: 32px !important;
+}
+[aria-label="Rank Math"] .rank-math-toolbar-score {
+    padding: 0 !important;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: none !important; /* Removing box shadow */
+}
+
+/* Styling for the Rank Math icon itself */
+[aria-label="Rank Math"] .rm-icon {
+    font-size: 24px !important;
+    color: black !important;
+    height: unset !important;
+}
+
+/* Additional styling when Rank Math icon is pressed */
+[aria-label="Rank Math"].is-pressed {
+    box-shadow: inset 0 0 0 1px #fff, 0 0 0 var(--wp-admin-border-width-focus) var(--wp-components-color-accent, var(--wp-admin-theme-color, #007cba)) !important;
+    outline: 2px solid transparent; /* Adding outline when pressed */
+}
+
+/* Adjusting icon color when Rank Math icon is pressed */
+[aria-label="Rank Math"].is-pressed .rm-icon {
+    color: white !important;
+}
+
+/* Hiding the SEO score div within Rank Math icon */
+[aria-label="Rank Math"] div.seo-score {
+    display: none !important;
+}

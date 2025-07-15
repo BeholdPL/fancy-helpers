@@ -1,0 +1,6 @@
+/* ATTENTION! These styles are now loaded inline in the fancy-functions.php file via the fancy_gb_inline_fix() function. 
+   Currently, this file is only used for easier code editing. */
+
+[data-gb-width="blocksy-width"] {
+    width: var(--theme-default-editor, var(--theme-block-width));
+}

@@ -1,0 +1,132 @@
+/* Main form container */
+.bhld-acf-form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
+}
+
+/* Textarea styles */
+.bhld-acf-form textarea {
+    border-radius: calc(var(--has-classic-forms, var(--theme-form-field-border-radius, 3px)) / 2) !important;
+}
+
+/* Label styles */
+.bhld-acf-form .acf-label label {
+    margin-bottom: 0 !important;
+}
+
+.bhld-acf-form .acf-label {
+    margin-bottom: 4px !important
+}
+
+/* Field styles */
+.bhld-acf-form .acf-field {
+    margin: unset;
+}
+
+/* Input styles */
+.bhld-acf-form .acf-input input {
+    background-color: var(--has-classic-forms, var(--theme-form-field-background-initial-color)) !important
+}
+
+/* Input prepend and append styles */
+.bhld-acf-form .acf-input-prepend, .bhld-acf-form .acf-input-append {
+    font-family: var(--theme-font-family);
+    font-size: var(--theme-font-size);
+    font-weight: var(--theme-font-weight);
+    font-style: var(--theme-font-style, inherit);
+    line-height: var(--theme-line-height);
+    letter-spacing: var(--theme-letter-spacing);
+    text-transform: var(--theme-text-transform);
+    padding: 8px;
+    background: none;
+    border: none;
+    min-height: 30px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    height: var(--has-height, var(--theme-form-field-height, 40px));
+}
+
+/* Number input styles */
+.bhld-acf-form input[type="number"] {
+    border-radius: var(--has-classic-forms, var(--theme-form-field-border-radius, 3px)) !important;
+}
+
+/* Focus styles for inputs */
+.bhld-acf-form input:focus {
+    outline: none !important;
+    color: var(--theme-form-text-focus-color, var(--theme-text-color)) !important;
+    border-color: var(--theme-form-field-border-focus-color) !important;
+    background-color: var(--has-classic-forms, var(--theme-form-field-background-focus-color)) !important;
+}
+
+/* Fields row styles */
+.bhld-acf-form-row {
+    display: grid;
+    gap: 32px;
+}
+
+.bhld-acf-form-row--1-col {
+    grid-template-columns: 1fr
+}
+
+/* Responsive grid for medium screens and up */
+@media screen and (min-width:768px) {
+    .bhld-acf-form-row--2-cols {
+        grid-template-columns: repeat(2, 1fr)
+    }
+    .bhld-acf-form-row--3-cols {
+        grid-template-columns: repeat(3, 1fr)
+    }
+}
+
+/* Submit row styles */
+.bhld-acf-form-row-submit {
+    display: flex;
+}
+
+/* Alignment classes for submit row */
+.bhld-acf-form-row-submit--m-left {
+    justify-content: flex-start;
+}
+.bhld-acf-form-row-submit--m-center {
+    justify-content: center;
+}
+.bhld-acf-form-row-submit--m-right {
+    justify-content: flex-end;
+}
+
+/* Tablet-specific alignment */
+@media screen and (min-width: 768px) {
+    .bhld-acf-form-row-submit--t-left {
+        justify-content: flex-start;
+    }
+    .bhld-acf-form-row-submit--t-center {
+        justify-content: center;
+    }
+    .bhld-acf-form-row-submit--t-right {
+        justify-content: flex-end;
+    }
+}
+
+/* Desktop-specific alignment */
+@media screen and (min-width: 1024px) {
+    .bhld-acf-form-row-submit--d-left {
+        justify-content: flex-start;
+    }
+    .bhld-acf-form-row-submit--d-center {
+        justify-content: center;
+    }
+    .bhld-acf-form-row-submit--d-right {
+        justify-content: flex-end;
+    }
+}
+
+/* Error notice styles */
+.acf-notice-dismiss {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}

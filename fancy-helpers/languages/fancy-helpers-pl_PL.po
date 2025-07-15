@@ -1,0 +1,249 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Fancy Helpers 1.4b1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-12\n"
+"PO-Revision-Date: 2025-02-12\n"
+"Last-Translator: User\n"
+"Language-Team: Polish\n"
+"Language: pl_PL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "(Requires Advanced Custom Fields plugin)"
+msgstr "(Wymaga wtyczki Advanced Custom Fields)"
+
+msgid "(Requires Rank Math plugin)"
+msgstr "(Wymaga wtyczki Rank Math)"
+
+msgid "Add Address"
+msgstr "Dodaj adres"
+
+msgid "Add Custom Field"
+msgstr "Dodaj niestandardowe pole"
+
+msgid "Add Email"
+msgstr "Dodaj e-mail"
+
+msgid "Add Phone"
+msgstr "Dodaj telefon"
+
+msgid "Add Social Media"
+msgstr "Dodaj media społecznościowe"
+
+msgid "Add hover effect"
+msgstr "Dodaj efekt najechania"
+
+msgid "Address"
+msgstr "Adres"
+
+msgid "Are you sure that you want to delete this?"
+msgstr "Czy na pewno chcesz to usunąć?"
+
+msgid "Automatically removes lone words at the end of text lines (works for both Polish and English languages simultaneously)."
+msgstr "Automatycznie usuwa osamotnione słowa na końcu linii tekstu (działa zarówno dla języka polskiego, jak i angielskiego jednocześnie)."
+
+msgid "Configure the settings for Fancy Helpers plugin. Check the options you want to enable."
+msgstr "Skonfiguruj ustawienia wtyczki Fancy Helpers. Wybierz opcje, które chcesz włączyć."
+
+msgid "Contacts"
+msgstr "Kontakty"
+
+msgid "Copied to clipboard!"
+msgstr "Skopiowano do schowka!"
+
+msgid "Custom H1"
+msgstr "Niestandardowy nagłówek H1"
+
+msgid "Default"
+msgstr "Domyślny"
+
+msgid "Delete plugin data on uninstall"
+msgstr "Usuń dane wtyczki przy dezinstalacji"
+
+msgid "Disable default patterns"
+msgstr "Wyłącz domyślne wzorce"
+
+msgid "Disables defaults patterns in Patterns Library."
+msgstr "Wyłącza domyślne wzorce w bibliotece wzorców."
+
+msgid "Disables scores in the Rank Math icon and makes the icon more uniform."
+msgstr "Wyłącza oceny w ikonie Rank Math i sprawia, że ikona jest bardziej jednolita."
+
+msgid "Display your site logo on the WordPress login page."
+msgstr "Wyświetl logo witryny na stronie logowania WordPress."
+
+msgid "E-mail"
+msgstr "E-mail"
+
+msgid "Enable Global Contacts"
+msgstr "Włącz globalne kontakty"
+
+msgid "Enable Lightbox"
+msgstr "Włącz lightbox"
+
+msgid "Enable custom H1"
+msgstr "Włącz niestandardowy nagłówek H1"
+
+msgid "Enables additional field for custom H1 tag."
+msgstr "Włącza dodatkowe pole dla niestandardowego nagłówka H1."
+
+msgid "Enables global contacts functionality."
+msgstr "Włącza funkcję globalnych kontaktów."
+
+msgid "Enables lightbox, made with fslightbox.js lite."
+msgstr "Włącza lightbox, stworzony za pomocą fslightbox.js lite."
+
+msgid "Enables patterns menu in dashboard."
+msgstr "Włącza menu wzorców w panelu administratora."
+
+msgid "Friday"
+msgstr "Piątek"
+
+msgid "Gallery default aspect ratio"
+msgstr "Domyślny współczynnik proporcji galerii"
+
+msgid "Global Contacts"
+msgstr "Globalne kontakty"
+
+msgid "Label"
+msgstr "Etykieta"
+
+msgid "Monday"
+msgstr "Poniedziałek"
+
+msgid "Monday - Friday"
+msgstr "Poniedziałek - Piątek"
+
+msgid "Name"
+msgstr "Nazwa"
+
+msgid "No categories"
+msgstr "Brak kategorii"
+
+msgid "Not Synced"
+msgstr "Nie zsynchronizowano"
+
+msgid "Patterns"
+msgstr "Wzorce"
+
+msgid "Phone"
+msgstr "Telefon"
+
+msgid "Remove"
+msgstr "Usuń"
+
+msgid "Remove orphans (beta)"
+msgstr "Usuń osierocone elementy (beta)"
+
+msgid "Saturday"
+msgstr "Sobota"
+
+msgid "Save Settings"
+msgstr "Zapisz ustawienia"
+
+msgid "Select the default aspect ratio for gallery images."
+msgstr "Wybierz domyślny współczynnik proporcji obrazów w galerii."
+
+msgid "Shortcode for Domain:"
+msgstr "Shortcode dla domeny:"
+
+msgid "Shortcode for URL:"
+msgstr "Shortcode dla adresu URL:"
+
+msgid "Shortcode for domain:"
+msgstr "Shortcode dla domeny:"
+
+msgid "Shortcode for name:"
+msgstr "Shortcode dla nazwy:"
+
+msgid "Shortcode with format:"
+msgstr "Shortcode z formatem:"
+
+msgid "Shortcode:"
+msgstr "Shortcode:"
+
+msgid "Show ACF fields"
+msgstr "Pokaż pola ACF"
+
+msgid "Show ACF menu in Dashboard."
+msgstr "Pokaż menu ACF w panelu administratora."
+
+msgid "Show patterns in menu"
+msgstr "Pokaż wzorce w menu"
+
+msgid "Sunday"
+msgstr "Niedziela"
+
+msgid "Sync Status"
+msgstr "Status synchronizacji"
+
+msgid "Synced"
+msgstr "Zsynchronizowano"
+
+msgid "Tag for Domain:"
+msgstr "Tag dla domeny:"
+
+msgid "Tag for URL:"
+msgstr "Tag dla adresu URL:"
+
+msgid "Tag for domain:"
+msgstr "Tag dla domeny:"
+
+msgid "Tag for name:"
+msgstr "Tag dla nazwy:"
+
+msgid "Tag with format:"
+msgstr "Tag z formatem:"
+
+msgid "Tag:"
+msgstr "Tag:"
+
+msgid "This will remove all plugin settings when uninstalling the plugin."
+msgstr "To usunie wszystkie ustawienia wtyczki podczas jej dezinstalacji."
+
+msgid "Thursday"
+msgstr "Czwartek"
+
+msgid "Tuesday"
+msgstr "Wtorek"
+
+msgid "Type your custom H1 tag here:"
+msgstr "Wpisz niestandardowy nagłówek H1 tutaj:"
+
+msgid "URL"
+msgstr "URL"
+
+msgid "Unify Rank Math Icon"
+msgstr "Ujednolić ikonę Rank Math"
+
+msgid "Use site logo on login page"
+msgstr "Użyj logo strony na stronie logowania"
+
+msgid "Value"
+msgstr "Wartość"
+
+msgid "Wednesday"
+msgstr "Środa"
+
+msgid "You have unsaved changes. Are you sure you want to leave this tab?"
+msgstr "Masz niezapisane zmiany. Czy na pewno chcesz opuścić tę kartę?"
+
+msgid "Opening Hours"
+msgstr "Godziny otwarcia"
+
+msgid "Addresses"
+msgstr "Adresy"
+
+msgid "Phone Numbers"
+msgstr "Numery telefonów"
+
+msgid "Email Addresses"
+msgstr "Adresy e-mail"
+
+msgid "Social Media"
+msgstr "Media społecznościowe"
+
+msgid "Custom Fields"
+msgstr "Pola niestandardowe"

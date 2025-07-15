@@ -1,0 +1,130 @@
+/* ATTENTION! These styles are now loaded inline in the fancy-helpers.php file via the fancy_mix_inline_styles() function. 
+   Currently, this file is only used for easier code editing. */
+
+/* Center align menu items */
+.menu li.menu-item,
+.menu li.page_item {
+    justify-content: center;
+}
+
+/* Adjust submenu position on the right */
+.menu>[data-submenu=right]>.sub-menu {
+    left: unset !important;
+}
+
+/* Italic text style */
+.italic {
+    font-style: italic;
+}
+
+/* Bold text style */
+.bold {
+    font-weight: bold;
+}
+
+/* Extra bold style for <b> and <strong> tags */
+b,
+strong {
+    font-weight: 900;
+}
+
+/* Oblique text style */
+.oblique {
+    font-style: oblique;
+}
+
+/* Inherit font style and weight for <mark> elements */
+.mark-inherit mark {
+    font-style: inherit;
+    font-weight: inherit;
+}
+
+/* Sticky elements for mobile */
+.element-sticky-mobile {
+    position: -webkit-sticky; /* Safari support */
+    position: sticky;
+    top: calc(var(--admin-bar, 0px) + var(--frame-size, 0px) + var(--scroll-margin-top-offset, 0px));
+}
+
+/* Sticky elements for tablet */
+@media screen and (min-width: 768px) {
+    .element-sticky-tablet {
+        position: -webkit-sticky; /* Safari support */
+        position: sticky;
+        top: calc(var(--admin-bar, 0px) + var(--frame-size, 0px) + var(--scroll-margin-top-offset, 0px));
+    }
+}
+
+/* Sticky elements for desktop */
+@media screen and (min-width: 1024px) {
+    .element-sticky-desktop {
+        position: -webkit-sticky; /* Safari support */
+        position: sticky;
+        top: calc(var(--admin-bar, 0px) + var(--frame-size, 0px) + var(--scroll-margin-top-offset, 0px));
+    }
+}
+
+/* Reverse flex direction on mobile */
+@media screen and (max-width: 781px) {
+    .mobile-reverse {
+        flex-wrap: wrap-reverse !important;
+    }
+}
+
+/* Two-column layout for wider screens */
+@media screen and (min-width: 1024px) {
+    .cols-2 {
+        column-count: 2;
+    }
+    
+    /* Adjust to two columns for medium-wide screens */
+    .cols-3 {
+        column-count: 2;
+    }
+}
+
+/* Three-column layout for very wide screens */
+@media screen and (min-width: 1512px) {
+    .cols-3 {
+        column-count: 3;
+    }
+}
+
+/* Aspect ratio utility classes for images in Gallery block */
+/* Square aspect ratio */
+.gallery-aspect-ratio-1-1 figure {
+    aspect-ratio: 1 / 1 !important
+}
+
+/* Standard 4:3 aspect ratio */
+.gallery-aspect-ratio-4-3 figure {
+    aspect-ratio: 4 / 3 !important
+}
+
+/* Portrait 3:4 aspect ratio */
+.gallery-aspect-ratio-3-4 figure {
+    aspect-ratio: 3 / 4 !important
+}
+
+/* Classic 3:2 aspect ratio */
+.gallery-aspect-ratio-3-2 figure {
+    aspect-ratio: 3 / 2 !important
+}
+
+/* Classic portrait 2:3 aspect ratio */
+.gallery-aspect-ratio-2-3 figure {
+    aspect-ratio: 2 / 3 !important
+}
+
+/* Wide 16:9 aspect ratio */
+.gallery-aspect-ratio-16-9 figure {
+    aspect-ratio: 16 / 9 !important
+}
+
+/* Tall 9:16 aspect ratio */
+.gallery-aspect-9-16 figure {
+    aspect-ratio: 9 / 16 !important
+}
+
+/* ATTENTION! These styles are now loaded inline in the fancy-helpers.php file via the fancy_mix_inline_styles() function. 
+   Currently, this file is only used for easier code editing. */

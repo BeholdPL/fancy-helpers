@@ -1,0 +1,70 @@
+/* General layout styles for italic and bold text */
+.is-layout-flow .italic {
+    font-style: italic;
+}
+
+.is-layout-flow .bold {
+    font-weight: bold;
+}
+
+.is-layout-flow b,
+.is-layout-flow strong {
+    font-weight: 900;
+}
+
+.is-layout-flow .oblique {
+    font-style: oblique;
+}
+
+.is-layout-flow .mark-inherit mark {
+    font-style: inherit;
+    font-weight: inherit;
+}
+
+/* Mobile-specific styles for reversing the order of columns on small screens */
+@media (max-width: 780px) {
+    .is-layout-flow .wp-block-columns.mobile-reverse {
+        flex-wrap: wrap-reverse !important;
+    }
+}
+
+/* Aspect ratio utility classes for images in Gallery block */
+/* Square aspect ratio */
+.gallery-aspect-ratio-1-1 img {
+    aspect-ratio: 1 / 1 !important
+}
+
+/* Standard 4:3 aspect ratio */
+.gallery-aspect-ratio-4-3 img {
+    aspect-ratio: 4 / 3 !important
+}
+
+/* Portrait 3:4 aspect ratio */
+.gallery-aspect-ratio-3-4 img {
+    aspect-ratio: 3 / 4 !important
+}
+
+/* Classic 3:2 aspect ratio */
+.gallery-aspect-ratio-3-2 img {
+    aspect-ratio: 3 / 2 !important
+}
+
+/* Classic portrait 2:3 aspect ratio */
+.gallery-aspect-ratio-2-3 img {
+    aspect-ratio: 2 / 3 !important
+}
+
+/* Wide 16:9 aspect ratio */
+.gallery-aspect-ratio-16-9 img {
+    aspect-ratio: 16 / 9 !important
+}
+
+/* Tall 9:16 aspect ratio */
+.gallery-aspect-9-16 img {
+    aspect-ratio: 9 / 16 !important
+}
+
+/* ACF Gallery image width */
+.acf-gallery .acf-gallery-attachment {
+    width: 10% !important;
+}
