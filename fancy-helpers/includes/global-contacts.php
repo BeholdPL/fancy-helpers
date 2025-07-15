@@ -275,6 +275,7 @@ function fancy_helpers_render_address_script() {
         addButton.on('click', function() {
             var newIndex = container.children().length;
             var newField = $('<div class="fancy-helpers-field fancy-helpers-address-field">' +
+                '<span class="dashicons dashicons-move drag-handle"></span>' +
                 '<div class="fancy-helpers-input-group">' +
                 '<div style="width: 192px; margin-right: 10px;"><label for="address_name_' + newIndex + '"><?php echo esc_js(__('Label', 'fancy-helpers')); ?></label>' +
                 '<input type="text" id="address_name_' + newIndex + '" name="fancy_helpers_contacts_addresses_options[addresses][' + newIndex + '][name]" required></div>' +
@@ -380,6 +381,7 @@ function fancy_helpers_render_phone_script() {
         addButton.on('click', function() {
             var newIndex = container.children().length;
             var newField = $('<div class="fancy-helpers-field fancy-helpers-phone-field">' +
+                '<span class="dashicons dashicons-move drag-handle"></span>' +
                 '<div class="fancy-helpers-input-group">' +
                 '<div style="width: 192px; margin-right: 10px;"><label for="phone_name_' + newIndex + '"><?php echo esc_js(__('Label', 'fancy-helpers')); ?></label>' +
                 '<input type="text" id="phone_name_' + newIndex + '" name="fancy_helpers_contacts_phones_options[phones][' + newIndex + '][name]" required></div>' +
@@ -491,6 +493,7 @@ function fancy_helpers_render_email_script() {
         addButton.on('click', function() {
             var newIndex = container.children().length;
             var newField = $('<div class="fancy-helpers-field fancy-helpers-email-field">' +
+                '<span class="dashicons dashicons-move drag-handle"></span>' +
                 '<div class="fancy-helpers-input-group">' +
                 '<div style="width: 192px; margin-right: 10px;"><label for="email_name_' + newIndex + '"><?php echo esc_attr__('Label', 'fancy-helpers'); ?></label>' +
                 '<input type="text" id="email_name_' + newIndex + '" name="fancy_helpers_contacts_emails_options[emails][' + newIndex + '][name]" required></div>' +
@@ -621,6 +624,7 @@ function fancy_helpers_render_social_media_script() {
         addButton.on('click', function() {
             var newIndex = container.children().length;
             var newField = $('<div class="fancy-helpers-field fancy-helpers-social-media-field">' +
+                '<span class="dashicons dashicons-move drag-handle"></span>' +
                 '<div class="fancy-helpers-input-group">' +
                 '<div style="width: 192px; margin-right: 10px;"><label for="social_name_' + newIndex + '"><?php echo esc_attr__('Label', 'fancy-helpers'); ?></label>' +
                 '<input type="text" id="social_name_' + newIndex + '" name="fancy_helpers_contacts_social_media_options[social_media][' + newIndex + '][name]" required></div>' +
@@ -744,6 +748,7 @@ function fancy_helpers_render_custom_script() {
         addButton.on('click', function() {
             var newIndex = container.children().length;
             var newField = $('<div class="fancy-helpers-field fancy-helpers-custom-field">' +
+                '<span class="dashicons dashicons-move drag-handle"></span>' +
                 '<div class="fancy-helpers-input-group">' +
                 '<div style="width: 192px; margin-right: 10px;"><label for="custom_name_' + newIndex + '"><?php echo esc_js(__('Label', 'fancy-helpers')); ?></label>' +
                 '<input type="text" id="custom_name_' + newIndex + '" name="fancy_helpers_contacts_customs_options[customs][' + newIndex + '][name]" required></div>' +
@@ -858,6 +863,10 @@ function fancy_helpers_render_contact_group_script() {
                 '<button type="button" class="button remove-field remove-contact-group"><?php echo esc_js(__('Remove', 'fancy-helpers')); ?></button>'+
                 '</div>');
             container.append(newField);
+
+            if(window.fancyHelpersRefresh){
+                window.fancyHelpersRefresh(container);
+            }
 
             if(window.fancyHelpersRefresh){
                 window.fancyHelpersRefresh(container);
